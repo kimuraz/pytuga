@@ -1,7 +1,7 @@
 language: python
 cache: pip
 sudo: required
-os: trusty
+os: xenial
 
 # Environment variables
 env:
@@ -20,9 +20,10 @@ matrix:
 # Package installation
 install:
   - sudo apt-get update
-  - sudo apt-get -qq install python3-pyqt5 python3-pyqt5.qsci
-  - apt-get install python3-pyqt5
-  - pip install tox codecov
+  - sudo apt-get install -y python3-pyqt5
+  - sudo apt-get install -y python3-pyqt5.qsci 
+  - sudo apt-get install -y python3-pip
+  - pip3 install tox codecov
 
 # Run tests
 script:
